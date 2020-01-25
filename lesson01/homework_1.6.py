@@ -18,11 +18,11 @@ a = float(input('Результат спортсмена в первый ден�
 b = float(input('Желаемый результат: '))
 
 i = 1
-result = f'{i}-й день: {round(a, 2) if a - int(a) else int(a)}\n'
+result = f'{i:>5}-й день: {round(a, 2) if a - int(a) else int(a)}\n'
 while a < b:
     i = i + 1
     a += a * 0.1
-    result += f'{i}-й день: {round(a, 2) if a - int(a) else int(a)}\n'
+    result += f'{i:>5}-й день: {round(a, 2) if a - int(a) else int(a)}\n'
 result += f'Ответ: на {i}-й день спортсмен достиг результата - не менее {a:.0f} км.'
 
 print(result)

@@ -11,6 +11,4 @@ while number // 10:
     if result < n:
         result = n
     number = number // 10
-    print(number)
 print(f'Самая большая цифра в введённом числе: {result}')
-
