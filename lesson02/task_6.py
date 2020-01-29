@@ -24,24 +24,26 @@
 i = 0
 data_structure = []
 
-# while True:
-#     name = input('Название товара: ')
-#     price = input('Цена: ')
-#     count = input('Количество: ')
-#     unit = input('Единица измерения: ')
-#     i += 1
-#     data_structure += [(i, {'название': name, 'цена': price, 'количество': count, 'ед': unit})]
-#     stop = input('Если вы закончили ввод данных введите: exit или 0: ')
-#     if stop == '0' or stop == 'exit':
-#         break
-# print(data_structure)
+while True:
+    name = input('Название товара: ')
+    price = input('Цена: ')
+    count = input('Количество: ')
+    unit = input('Единица измерения: ')
+    i += 1
+    data_structure += [(i, {'название': name, 'цена': price, 'количество': count, 'ед': unit})]
+    stop = input('Если вы закончили ввод данных введите: exit или 0: ')
+    if stop == '0' or stop.lower() == 'exit':
+        break
+print(data_structure)
 
-data_structure = [(1, {'название': 'asfas', 'цена': '24', 'количество': 'sfs', 'ед': 'fh'}), (2, {'название': 'fsaafa', 'цена': '32235', 'количество': 'fsdf', 'ед': '35'}), (3, {'название': 'sdfsdf', 'цена': '343', 'количество': 'fdfs', 'ед': '34'})]
 analytics = {}
 for el in data_structure:
     if not analytics:
         analytics.update(el[1])
+        for key, value in analytics.items():
+            analytics[key] = [analytics[key]]
     else:
         for key, value in el[1].items():
-            [analytics[key]].append(value)
+            analytics[key].append(value)
 print(analytics)
+
