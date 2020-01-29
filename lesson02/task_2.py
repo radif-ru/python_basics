@@ -11,6 +11,7 @@ while True:
     if not user_el:
         break
     user_list.append(user_el)
-    if not user_list.index(user_el) % 2:
-        user_list[user_list.index(user_el)], user_list[user_list.index(user_el) - 1] = user_list[user_list.index(user_el) - 1], user_list[user_list.index(user_el)]
+    el_index = len(user_list) - 1
+    if el_index % 2:
+        user_list[el_index], user_list[el_index - 1] = user_list[el_index - 1], user_list[el_index]
 print(user_list)
