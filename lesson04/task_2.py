@@ -8,3 +8,7 @@
 """
 source_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
 print([source_list[ind] for ind in range(1, len(source_list)) if source_list[ind] > source_list[ind - 1]])
+
+# Альтернативные решения:
+print([num1 for num1, num2 in zip(source_list[1:], source_list[:-1]) if num1 > num2])
+print([num for i, num in enumerate(source_list) if i > 0 and num > source_list[i-1]])

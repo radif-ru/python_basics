@@ -18,3 +18,7 @@ else:
         print(f'Необходимо вводить только числа. \nОшибка: {e}')
     else:
         print(f'Зарплата составила: {wage:.2f}')
+
+# Альтернативное регение:
+# hours, salary_per_our, bonus = map(float, sys.argv[1:])
+# print('Salary - {}'.format(hours * salary_per_our + bonus))
