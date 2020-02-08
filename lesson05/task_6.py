@@ -17,5 +17,6 @@ with open('item_names.txt', 'r', encoding='utf-8') as f:
         quantity = 0
         for item in items[1:]:
             quantity += int(''.join(filter(lambda x: x.isdigit(), item)))
+            # quantity += int(''.join(n for n in item if n.isdigit()))
         items_dict.update({items[0]: quantity})
 print(items_dict)
