@@ -435,3 +435,78 @@ print(f"radians() -> {radians(90)}")
 source_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
 print([num1 for num1, num2 in zip(source_list[1:], source_list[:-1]) if num1 > num2])
 print([num for i, num in enumerate(source_list) if i > 0 and num > source_list[i-1]])
+
+print(r"C:\Users\User_1\Desktop\proj\text.txt")
+
+my_f = open("text.txt", "r")
+content = my_f.read()
+print(content)
+my_f.close()
+
+my_f = open("text.txt", "r")
+content = my_f.readline()
+print(content)
+my_f.close()
+
+my_f = open("text.txt", "r")
+content = my_f.readlines()
+print(content)
+my_f.close()
+
+my_f = open("text.txt", "r")
+
+for line in my_f:
+    print(line)
+my_f.close()
+
+my_f = open("text.txt", "r")
+
+while True:
+    content = my_f.read(24)
+    print(content)
+
+    if not content:
+        break
+
+my_f = open("text.txt", "rb")
+print(my_f.read())
+
+out_f = open("out_file.txt", "w")
+out_f.write("String string string")
+out_f.close()
+
+out_f = open("out_file.txt", "w")
+str_list = ['stroka_1\n', 'stroka_2\n', 'stroka_3\n']
+out_f.writelines(str_list)
+out_f.close()
+
+with open("text.txt") as f_obj:
+    for line in f_obj:
+        print(line)
+
+try:
+    f_obj = open("text.txt", encoding='utf-8')
+    for line in f_obj:
+        print(line)
+except IOError or LookupError as e:
+    print(f"Произошла ошибка ввода-вывода!\nОшибка: {e}")
+finally:
+    f_obj.close()
+
+import os
+
+content = os.listdir(path=".")
+print(content)
+
+import sys
+
+print(sys.executable)
+
+# sys.exit(0)
+
+print(sys.path)
+
+print(sys.platform)
+
+
+
