@@ -14,6 +14,8 @@
 Подсказка: использовать менеджер контекста.
 
 """
+import json
+
 with open('company_data.txt', 'r', encoding='utf-8') as f:
     companies_profit = {}
     average_profit = {}
@@ -32,4 +34,3 @@ with open('company_data.json', 'w+', encoding='utf-8') as f:
     json.dump([companies_profit, average_profit], f)
     f.seek(0)
     print(f.read())
-    
