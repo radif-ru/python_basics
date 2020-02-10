@@ -37,6 +37,7 @@ traffic_light = TrafficLight()
 # Порядок режимов нарушен:
 traffic_light.running(['red', 'green', 'yellow'])
 traffic_light.running(['зеленый', 'желтый', 'красный'])
+traffic_light.running([3, 2, 1])
 # Порядок режимов верный(возможен вызов метода без передачи параметров, тогда будет отображаться
 # английский список по умолчанию):
 traffic_light.running(['красный', 'желтый', 'зеленый'])
