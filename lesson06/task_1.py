@@ -15,19 +15,28 @@ from time import sleep
 
 
 class TrafficLight:
-    ___color = None
+    ___color = [['red', 'yellow', 'green'], ['красный', 'желтый', 'зеленый'], [1, 2, 3]]
 
-    def running(self):
-        self.___color = cycle(['red', 'yellow', 'green'])
-        for color in self.___color:
-            print(color)
-            if color == 'red':
-                sleep(7)
-            elif color == 'yellow':
-                sleep(2)
-            elif color == 'green':
-                sleep(0.2)
+    def running(self, use_colors=None):
+        if use_colors and use_colors not in self.___color:
+            print('Нарушение порядка режимов!')
+        else:
+            use_colors = self.___color[0] if not use_colors else use_colors
+            zip_colors = list(zip(*self.___color))
+            for color in cycle(use_colors):
+                print(color)
+                if color in zip_colors[0]:
+                    sleep(7)
+                elif color in zip_colors[1]:
+                    sleep(2)
+                elif color in zip_colors[2]:
+                    sleep(1)
 
 
 traffic_light = TrafficLight()
-traffic_light.running()
+# Порядок режимов нарушен:
+traffic_light.running(['red', 'green', 'yellow'])
+traffic_light.running(['зеленый', 'желтый', 'красный'])
+# Порядок режимов верный(возможен вызов метода без передачи параметров, тогда будет отображаться
+# английский список по умолчанию):
+traffic_light.running(['красный', 'желтый', 'зеленый'])
